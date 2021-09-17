@@ -1,4 +1,4 @@
-import React from "react";
+import React  from "react";
 import classes from './Input.module.css'
 
 type InputPropsType = {
@@ -8,8 +8,8 @@ type InputPropsType = {
 
 export function Input(props: InputPropsType) {
     return (
-        <input type={"text"}
+        <input
                value={props.value}
-               className={props.value === props.maxvalue ? classes.stopcounter : classes.inpetstyle}/>
+               className={props.value === props.maxvalue ? classes.stopcounter : classes.inputstyle}/>
     )
 }

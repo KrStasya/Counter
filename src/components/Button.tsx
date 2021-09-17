@@ -6,7 +6,7 @@ import classes from './Button.module.css'
 
 type ButtonPropsType = {
     title: string
-    value: number
+    value?: number
     startvalue?: number
     maxvalue?: number
     callback: () => void
@@ -14,7 +14,7 @@ type ButtonPropsType = {
 
 export function Button(props: ButtonPropsType) {
 
-    const disabled = props.value === props.startvalue || props.maxvalue === props.value
+    const disabled = (props.startvalue===props.value)|| (props.maxvalue === props.value) || (props.maxvalue===props.startvalue)
     return (
         <button className={disabled?classes.disablet:classes.clickbutton} disabled={disabled}
                 onClick={props.callback}>{props.title}</button>

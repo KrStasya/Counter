@@ -2,14 +2,13 @@
   color: red;
 }
 
-.inpetstyle,.stopcounter  {
+.inputstyle,.stopcounter  {
   display: inline-block;
   text-align: center;
   width: 200px;
   height: 100px;
   border-radius: 10px;
   background: beige;
-
   font-size: 100px;
   margin: 10px 10px 10px 70px;
 }

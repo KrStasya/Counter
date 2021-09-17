@@ -26,4 +26,17 @@
   border-radius: 10px;
   border: 2px solid chocolate;
   margin: 10px 20px 10px 20px;
+  height: 120px;
+}
+
+.error {
+  text-align: center;
+  font-size: xx-large;
+  margin-top: 40px;
+}
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: xx-large;
 }
