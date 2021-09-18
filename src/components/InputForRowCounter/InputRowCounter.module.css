@@ -1,0 +1,25 @@
+.inputRowCounter {
+    display: inline-block;
+    margin-inline: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+
+.inputnumbertype {
+    position: center;
+    text-align: center;
+    border-color:chocolate;
+    border-radius: 5px;
+}
+
+.errorinput {
+    position: center;
+    text-align: center;
+    background: red;
+    border-color: darkorange;
+    border-radius: 5px;
+}
+.title {
+    margin-right: 80px;
+}

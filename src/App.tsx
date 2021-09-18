@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import {Counter} from "./Counter";
 import {RawCounterData} from "./RawCounterData";
@@ -17,16 +17,46 @@ function App() {
     const resetValue = () => {
         setvalue(startvalue)
         seterror('')
-        setmessage('Введите данные')
+        setmessage('')
     }
-
     const setvalues = () => {
         if (maxvalue >startvalue) {
             seterror("")
             setmessage("")
             setvalue(startvalue)
+            setLocalstorage()
         }
     }
+
+    useEffect(()=>{
+        getLocalmaxstorage()
+        getLocalstartstorage()
+    },[])
+    let getLocalstartstorage=()=>{
+        let ValueasString=localStorage.getItem('counterstartValue')
+        if (ValueasString){
+            let newValue=JSON.parse(ValueasString)
+            setstartvalue(newValue)}}
+    let getLocalmaxstorage=()=>{
+        let ValueasString=localStorage.getItem('countermaxValue')
+    if (ValueasString){
+        let newValue=JSON.parse(ValueasString)
+        setmaxvalue(newValue)}}
+let setLocalstorage=()=>{
+       localStorage.setItem('counterstartValue',JSON.stringify(startvalue))
+      localStorage.setItem('countermaxValue',JSON.stringify(maxvalue))
+    }
+
+
+/*    useEffect(() => {
+        localStorage.setItem('counterstartValue', JSON.stringify(startvalue))
+    }, [startvalue])
+    useEffect(() => {
+        localStorage.setItem('countermaxValue', JSON.stringify(maxvalue))
+    }, [maxvalue])*/
+
+
+
 
     return (
         <div className="App">
@@ -36,7 +66,9 @@ function App() {
                setstartvalue={setstartvalue}
                setmaxvalue={setmaxvalue}
                setmessage={setmessage}
-               setvalues={setvalues}/>
+               setvalues={setvalues}
+               seterror={seterror}
+               error={error}/>
             <Counter value={value}
                      startvalue={startvalue}
                      maxvalue={maxvalue}

@@ -1,6 +1,6 @@
 import React from "react";
-import {Button} from './components/Button';
-import {Input} from './components/Input';
+import {Button} from './components/Button/Button';
+import {Input} from './components/Input/Input';
 ;
 
 
@@ -16,6 +16,7 @@ type CounterPropsType = {
 
 export function Counter(props: CounterPropsType) {
     const addValue = () => props.addValue(props.value)
+
     const resetValue = () => props.resetValue(props.startvalue)
 
     return (
@@ -27,7 +28,7 @@ export function Counter(props: CounterPropsType) {
             </div>
             <div className={"buttonarea"}>
                 <Button title={"Add"} value={props.value} maxvalue={props.maxvalue} callback={addValue}/>
-                <Button title={"Reset"} value={props.value} startvalue={props.startvalue} callback={resetValue}/>
+                <Button title={"Reset"} value={props.value} startvalue={props.startvalue} callback={resetValue} />
             </div>
         </div>
     )
